@@ -1,0 +1,124 @@
+---
+title: "lab1"
+output: html_document
+date: "2026-10-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+install.packages("tidyverse")
+libray(tidyverse)
+
+a=1
+b=2
+print(a + b)
+print("a + b")
+
+
+a=2
+b=2
+if(a>1 & b>1)
+print("hello")
+
+a=1
+
+a1=a+1
+
+a2=a+2
+
+a=a-1
+ 
+a1=a+1
+
+
+a=1
+
+a=a+1
+
+lfs <- read_tsv("../Data/lfsp_jm25_eul_pwt24.tab")
+
+lfs1 <- select(lfs, SEX, HOURPAY, AGE, GOR9D, EMPLEN, FLEX22W6, FTPT, HIQUL22D, INDE07M, JOBTYP, MPNR02, MARSTA, NSECMJ20, BUSHR)
+
+
+lfs2 <- select(lfs, SEX, HOURPAY, AGE, GOR9D, EMPLEN, FLEX22W6, FTPT)
+
+lfs <- select(lfs, HOURPAY, AGE, GOR9D, EMPLEN, FLEX22W6, FTPT, HIQUL22D, INDE07M, JOBTYP, MPNR02, MARSTA, NSECMJ20, BUSHR)
+
+
+
+lfs <- filter(lfs, HOURPAY >= 6.4, HOURPAY <= 100)
+
+
+dim(lfs)
+
+
+install.packages("tidyverse")
+libray(tidyverse)
+
+
+
+
+lfs <- read_tsv("../Data/lfsp_jm25_eul_pwt24.tab")
+
+lfs <- select(lfs, SEX, HOURPAY, AGE, GOR9D, EMPLEN, FLEX22W6, FTPT, HIQUL22D, INDE07M, JOBTYP, MPNR02, MARSTA, NSECMJ20, BUSHR)
+
+glimpse(lfs)
+
+lfs <- mutate(lfs, 
+              SEX = factor(SEX, levels = c(1,2), labels = c("Male", "Female"))
+             )
+
+glimpse(lfs)
+
+
+
+
+
+
+
+
+
+listings <-read_csv("listings_edinburgh.csv")
+listing <-mutate(listings,
+                 room_type=factor(room_type),
+                 property_type=factor(property_type))
+
+listings_2 <-mutate(listings,
+                    room_type=factor(room_type),
+                    property_type=factor(property_type))
+
+listing_2<- listings |>mutate(room_type=factor(room_type))
+
+mys<-"hello"
+mys
+
+sink("D:\\test.txt")
+
+
+
+sink('test.txt')
+
+
+print(mys)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
